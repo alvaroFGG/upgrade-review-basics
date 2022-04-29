@@ -29,13 +29,20 @@ const users = [
     },
 ];
 
-
+let sumTotal = 0;
+let cont = 0;
 for(let i of users){
     let sum = 0;
     for(let j in i.favoritesSounds){
         sum += i.favoritesSounds[j].volume;
+
+        sumTotal += i.favoritesSounds[j].volume;
+        cont++;
     }
     let media = sum/3;
     console.log('La media de volumen de: ',i.name,' es: ',media);
 }
 
+let mediaTotal = sumTotal/cont;
+
+console.log("La media total es de: ",mediaTotal);
